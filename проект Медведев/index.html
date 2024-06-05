@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of the Urals</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<!-- Первый блок -->
+<body>
+    <header>
+        <a href="#"><img class="mountains" src="img/vecteezy_mountains-and-lake_24088930.png" alt=""></a>
+        <span class="title_mini">Туроператор по Уралу</span>
+        <h1 class="title">ПУТНИК</h1>
+            <nav>
+                <ul class="list">
+                    <li><a href="#" class="list">Главная</a></li>
+                    <li><a href="#" class="list">Туры</a></li>
+                    <li><a href="#" class="list">Контакты</a></li>
+                </ul>
+            </nav>
+    </header>
+    <!-- или в отдельный див надо было картинку и текст писать -->
+    <section>
+        <div class="picture">
+            <p class="number">+7 (343) 276-12-67</p>
+            <span class="time">ежедневно: с 9:00 до 20:00</span>
+        </div>
+        <div classs="banner">
+            <img class="landscape" src="img/banner.jpg" alt="landscape">
+            <h1 class="main_title">ТУРЫ ПО УРАЛУ</h1>
+        </div>
+    </section>
+
+
+
+<!-- Второй блок -->
+
+<h2>Туры и путешествия по Уралу 2024</h2>
+<p>Урал — это уникальное место, где горы встречаются с густыми лесами, создавая сказочные пейзажи. 
+    Здесь можно совершить увлекательные походы и насладиться чистым воздухом, наполненным ароматами хвои. 
+    Величественные водопады и прозрачные озёра дарят умиротворение и вдохновение каждому путнику. 
+    Путешествуя по Уралу, вы откроете для себя неизведанные уголки России, которые навсегда останутся в вашем сердце!</p>
+
+    <h3>Удобная система оплата частями</h3>
+    <p>    10% предоплата 100% возврат предоплаты 0% рассрочка на 6 месяцев</p>
+    <a href="#" class="tch">Узнать больше ...</a>
+
+
+
+<!-- Третий блок -->
+
+<section class="sec_two">
+    <h3 class="main_title2">
+        Оставьте свои данные, если хотите получать информацию о выгодных предложениях</h3>
+    <div class="form_field">
+        <input class="field" type="text" name="name" placeholder="Имя" required>
+        <input class="field" type="text" name="last_name" placeholder="Фамилия" required>
+        <input class="field" type="text" name="email" placeholder="Почта" required>
+    </div>
+    <button type="submit" class="bch">Отправить!</button>
+    </div>
+</section>
+
+
+
+<!-- Четвертый блок -->
+
+<section class="sec_three">
+    <div class="container">
+        <div class="main_block">
+            <div class="blocks">
+                <img class="list_image_item" src="img/1.jpg" alt="picture">
+                <h3>Первый блок</h3>
+                <p>Lorem, ipsum dolor, sit amet conseclelur adipisicing elit?</p>
+            </div>
+
+            <div class="blocks">
+                <img class="list_image_item" src="img/2.jpg" alt="picture">
+                <h3>Второй блок</h3>
+                <p>Lorem, ipsum dolor, sit amet conseclelur adipisicing elit?</p>
+            </div>
+
+            <div class="blocks">
+                <img class="list_image_item" src="img/3.jpg" alt="picture">
+                <h3>Третий блок</h3>
+                <p>Lorem, ipsum dolor, sit amet conseclelur adipisicing elit?</p>
+            </div>
+        </div>
+
+        <div class="main2_block">
+            <div class="blocks">
+                <img class="list_image_item" src="img/4.jpg" alt="picture">
+                <h3>Первый блок</h3>
+                <p>Lorem, ipsum dolor, sit amet conseclelur adipisicing elit?</p>
+            </div>
+
+            <div class="blocks">
+                <img class="list_image_item" src="img/5.jpg" alt="picture">
+                <h3>Второй блок</h3>
+                <p>Lorem, ipsum dolor, sit amet conseclelur adipisicing elit?</p>
+            </div>
+
+            <div class="blocks">
+                <img class="list_image_item" src="img/6.jpg" alt="picture">
+                <h3>Третий блок</h3>
+                <p>Lorem, ipsum dolor, sit amet conseclelur adipisicing elit?</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+<!-- Пятый блок -->
+
+<form class="form_order">
+    <h3 class="main_title2">Форма заказа для обратного звонка</h3>
+    <div class="form_field">
+        <input class="field" type="text" id="f1" placeholder="Имя" required>
+        <input class="field" type="text" id="f2" placeholder="дд.мм.гггг" required>
+        <span class="error" id="error"></span>
+        <input class="field" type="number" id="f3" placeholder="Выберете кол-во товаров" required>
+        <input class="field" type="url" id="f4" placeholder="Ссылка на мессенджер" required>
+        <span class="invalid" id="invalid"></span>
+        <button class="bch" type="submit" id="bch" onclick="send()">Отправить форму!</button>
+    </div>
+</form>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
