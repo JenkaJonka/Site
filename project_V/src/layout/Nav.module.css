@@ -13,6 +13,34 @@
     box-shadow: 0 5px 10px rgb(199, 195, 195);
 }
 
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+li {
+    position: relative;
+    float: left;
+    width: 100px;
+    margin-left: 30px;
+}
+
+li p {
+    width: 120px;
+    height: 30px;
+}
+
+/* .navLink {
+  
+} */
+
+
 li img {
     margin-right: 50px;
     width: 100px;
@@ -43,6 +71,7 @@ button img {
     color: hsl(0, 0%, 0%);
     text-decoration: none;
 }
+
 
 .navbar li a:hover {
     text-decoration: underline;
