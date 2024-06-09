@@ -9,6 +9,7 @@
     display: flex;
     padding: 0 5%;
     box-shadow: 0 5px 10px rgb(199, 195, 195);
+    z-index: 1;
 }
 
 .title_mini {
@@ -114,3 +115,4 @@ button img {
     color: #fffffff1;
     border-radius: 5px;
 }
+

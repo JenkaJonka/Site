@@ -3,10 +3,12 @@ import main_photo from '../img/banner.jpg';
 import './Home.css';
 import 'animate.css';
 
-function App1() {
+
+function App() {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+
 
     formData.append("access_key", "ecd9bf96-7ddd-4621-87dd-c2bf1c695827");
 
@@ -25,38 +27,8 @@ function App1() {
     if (res.success) {
       console.log("Success", res);
     }
-    };
+  };
 
-    // function name () {
-    //   let name = document.getElementById("name").value;
-    //   let regex = /^[a-zA-Z\s]{2, 15}&/;
-  
-    //   if (regex.test(name)) {
-    //     document.getElementById("name").style.backgroundColor = "green";
-    //     return true;
-    //   }
-  
-    //   else {
-    //     document.getElementById("name").style.backgroundColor = "red";
-    //     return false;
-    //   }
-    // }
-
-    // function check(name) {
-    //   if (name() === true) {
-    //     return true;
-    //   }
-    //   else {
-    //     return false;
-    //   }
-    // }
-
-
-    // let email = document.getElementById("name").ariaValueMax;
-    // let regex1 = /^[a-zA-Z\s]{2, 15}&/;
-    // if (regex.test(email)) {
-    //   document.getElementById("email").style.backgroundColor = "green";
-    //   return True;
 
 
 
@@ -78,8 +50,8 @@ function App1() {
       <form className='form_submit' onSubmit={onSubmit}>
         <h3 className='animate__animated animate__pulse title_form'>Получать эксклюзивные предложения первыми!</h3>
         <div className='form_field'>
-          <input className='field' type="text" name="name" placeholder="Имя" required id='name' minLength={3} pattern='[a-z]+'/>
-          <input className='field' type="email" name="email" placeholder="email" required id='email' pattern='\S+@[a-z]+.[a-z]+' />
+          <input className='field' type="text" id="name" onBlur={checkName} placeholder="Имя" required />
+          <input className='field' type="email" id="email" onBlur={checkMail} placeholder="email" required />
           <button className='bch' type="submit" id='f_bch'>Отправить</button>
         </div>
       </form>
@@ -87,4 +59,66 @@ function App1() {
   );
 }
 
-export default App1;
+export default App;
+
+function checkName() {
+  let name = document.getElementById("name").value;
+  let regex = /^[a-zA-Z\s]{2,15}$/;
+
+  if (regex.test(name)) {
+    document.getElementById("name").style.boxShadow = "0 0 10px #00FF00";
+    return true;
+  }
+
+  else {
+    document.getElementById("name").style.boxShadow = "0 0 10px #FF0000";
+    return false;
+  }
+}
+
+function checkMail() {
+  let mail = document.getElementById("email").value;
+  let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/;
+
+  if (regex.test(mail)) {
+    document.getElementById("email").style.boxShadow = "0 0 10px #00FF00";
+    return true;
+  }
+  else {
+    document.getElementById("email").style.boxShadow = "0 0 10px #FF0000";
+    return false;
+  }
+}
+
+
+function check(f1, f2) {
+  if (f1() && f2() === true) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+
+
+document.getElementById("f_bch").onclick = function (e) {
+  const isFormValid = check(checkName, checkMail)
+  
+  if (!isFormValid) {
+    const button = document.getElementById("f_bch");
+    button.disabled = true;
+    setTimeout(() => button.disabled = false, 1000);
+    alert("Форма некорректно заполнена")
+    return false;
+  }
+  else {
+    alert("Форма отправлена")  
+   
+
+
+  }
+  return true
+}
+
+
