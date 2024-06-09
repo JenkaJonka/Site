@@ -25,7 +25,39 @@ function App1() {
     if (res.success) {
       console.log("Success", res);
     }
-  };
+    };
+
+    // function name () {
+    //   let name = document.getElementById("name").value;
+    //   let regex = /^[a-zA-Z\s]{2, 15}&/;
+  
+    //   if (regex.test(name)) {
+    //     document.getElementById("name").style.backgroundColor = "green";
+    //     return true;
+    //   }
+  
+    //   else {
+    //     document.getElementById("name").style.backgroundColor = "red";
+    //     return false;
+    //   }
+    // }
+
+    // function check(name) {
+    //   if (name() === true) {
+    //     return true;
+    //   }
+    //   else {
+    //     return false;
+    //   }
+    // }
+
+
+    // let email = document.getElementById("name").ariaValueMax;
+    // let regex1 = /^[a-zA-Z\s]{2, 15}&/;
+    // if (regex.test(email)) {
+    //   document.getElementById("email").style.backgroundColor = "green";
+    //   return True;
+
 
 
 
@@ -46,9 +78,9 @@ function App1() {
       <form className='form_submit' onSubmit={onSubmit}>
         <h3 className='animate__animated animate__pulse title_form'>Получать эксклюзивные предложения первыми!</h3>
         <div className='form_field'>
-          <input className='field' type="text" name="name" placeholder="Имя" required />
-          <input className='field' type="email" name="email" placeholder="email" required />
-          <button className='bch' type="submit">Отправить</button>
+          <input className='field' type="text" name="name" placeholder="Имя" required id='name' minLength={3} pattern='[a-z]+'/>
+          <input className='field' type="email" name="email" placeholder="email" required id='email' pattern='\S+@[a-z]+.[a-z]+' />
+          <button className='bch' type="submit" id='f_bch'>Отправить</button>
         </div>
       </form>
     </>
