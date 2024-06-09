@@ -5,36 +5,25 @@ import Tours from '../pages/Tours';
 import Contacts from '../pages/Contacts';
 import styles from './Nav.module.css'; // Импортируем CSS модули 
 import Home from '../pages/Home'
-import logo from '../img/vecteezy_mountains-and-lake_24088930.png'
-// import calc from '../img/calculation.svg'
-// import req from '../img/measering.svg'
+import logo from '../img/vecteezy_mountain_1206236.png'
 
 
 
 const Navigation = () => {
   return (
     <Router>
-      <div>
+      <header>
         {/* Навигационное меню */}
         <nav className={`navbar ${styles.navbar}`}>
-
-
+          <Link to="/" className={styles.navLink}><img className={styles.nav_logo} src={logo} alt='home' ></img><figcaption className={styles.title_mini}>Туроператор по Уралу</figcaption></Link>
+          <Link to="/" className={styles.navLink}><h1 className={styles.title}>ПУТНИК</h1></Link>
           <ul>
-            <li><Link to="/" className={styles.navLink}><img className={styles.nav_logo} src={logo} alt='home' ></img></Link></li>
-            <li><span className={styles.title_mini}>Туроператор по Уралу</span></li>
-            <li><h1 className={styles.title}>ПУТНИК</h1></li>
             <li><Link to="/Tours" className={styles.navLink}>Туры</Link></li>
             <li><Link to="/About" className={styles.navLink}>О нас</Link></li>
             <li><Link to="/contacts" className={styles.navLink}>Контакты</Link></li>
             <li><p>Телефон <br /><a href="tel:+79222222222">+7-922-222-22-22</a></p></li>
-            {/* <button className={styles.btn1}><img src={req} alt='logo'></img> Make request</button> */}
-            {/* <button className={styles.btn2}><img src={calc} alt='logo'></img> Calculation</button> */}
           </ul>
-
         </nav>
-        <div>
-
-        </div>
 
         {/* Контент страниц */}
         <div className={styles.pageContent}>
@@ -45,7 +34,7 @@ const Navigation = () => {
             <Route path="/contacts" element={<Contacts />} />
           </Routes>
         </div>
-      </div>
+      </header>
     </Router>
   );
 };
