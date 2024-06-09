@@ -49,6 +49,7 @@ const Tours = () => {
                 </div>
 
                 <div className="blocks">
+                    
                     <img className="list_image_item" src={img5} alt="pic"></img>
                     <p className='text_on_photo'>Этнотур в Башкирию: люди и традиции</p>
                     <h3>Сообщить о появлении новых дат</h3>
@@ -68,7 +69,6 @@ const Tours = () => {
         </div>
     )
 }
-
 
 
 export default Tours; 
