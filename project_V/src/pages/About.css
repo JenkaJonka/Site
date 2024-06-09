@@ -76,3 +76,95 @@
     font-weight: 100;
     margin-top: 20px;
 }
+
+@media screen and (max-width: 1200px)
+{
+    .wrapper {
+        flex-direction: column;
+    }
+    .job_title {
+        font-size: 27px;
+    }
+
+    .post {
+        font-size: 24px;
+    }
+
+    .text_about_club {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .reviews_title {
+        font-size: 35px;
+    }
+
+    .name_user {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .inform {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 992px)
+{
+    .job_title {
+        font-size: 29px;
+    }
+
+    .post {
+        font-size: 26px;
+    }
+    .reviews_title {
+        font-size: 37px;
+    }
+    .inform {
+        font-size: 33px;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .job_title {
+        font-size: 30px;
+    }
+
+    .post {
+        font-size: 28px;
+    }
+    .text_about_club {
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    .reviews_title {
+        font-size: 39px;
+    }
+    .inform {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 576px)
+{
+    .vlad {
+        margin-left: -83px;
+    }
+    .job_title {
+        margin-left: -110px;
+        font-size: 31px;
+    }
+
+    .post {
+        font-size: 29px;
+    }
+    .text_about_club {
+        width: 80%;
+        margin-top: 40px;
+    }
+    .pic_user {
+        margin-left: -30px;
+    }
+}
