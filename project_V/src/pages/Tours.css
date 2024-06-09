@@ -45,17 +45,11 @@
 
 .data {
     color: rgb(8, 158, 163);
-    font-size: 22px;
-}
-
-.signature {
-    font-size: 20px;
 }
 
 .reminder {
     text-decoration: none;
     color: rgb(8, 158, 163);
-    font-size: 22px;
 }
 
 .rem:hover {

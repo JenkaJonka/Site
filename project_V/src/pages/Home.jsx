@@ -102,7 +102,7 @@ function check(f1, f2) {
 
 
 
-document.getElementById("f_bch").onclick = function (e) {
+document.getElementById("f_bch").onclick = function()  {
   const isFormValid = check(checkName, checkMail)
   
   if (!isFormValid) {
@@ -114,9 +114,6 @@ document.getElementById("f_bch").onclick = function (e) {
   }
   else {
     alert("Форма отправлена")  
-   
-
-
   }
   return true
 }

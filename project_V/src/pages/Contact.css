@@ -1,12 +1,12 @@
 .contact_title {
     margin-top: 120px;
     text-align: center;
-    background-color: rgb(232, 240, 238);
-    width: 1000px;
-    margin-left: 385px;
+    font-size: 20px;
+    background-color: rgb(227, 231, 230);
+    width: 100%;
     color: rgb(5, 141, 141);
-    padding: 20px 0px 20px 0px;
-    border-radius: 60%;
+    padding: 10px 0px 10px 0px;
+    border-radius: 30px;
     margin-bottom: 60px;
     border-style: groove;
 }
@@ -31,12 +31,45 @@
     margin: 0px 0px 50px 20px;
 }
 
-@media screen and (max-width: 1800px)
+@media screen and (max-width: 1750px)
+{
+    .content {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 1200px)
+{
+    .content {
+        font-size: 25px;
+    }
+    .quest_title {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 992px)
 {
     .contact_title {
-        margin-top: 120px;
-        text-align: center;
-        padding: 20px 0px 20px 0px;
-        margin-bottom: 60px;
+        font-size: 24px;
+    }
+    .content {
+        font-size: 27px;
+    }
+    .quest_title {
+        font-size: 34px;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .contact_title {
+        font-size: 25px;
+    }
+    .content {
+        font-size: 29px;
+    }
+    .quest_title {
+        font-size: 36px;
     }
 }
