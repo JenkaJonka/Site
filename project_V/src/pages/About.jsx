@@ -1,5 +1,5 @@
 import React from 'react';
-import vlad from '../img/vecteezy_mountain_1206236.png'
+import vlad from '../img/20240602_161113.jpg'
 import './About.css'
 import user from '../img/user.png'
 

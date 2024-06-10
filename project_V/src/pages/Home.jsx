@@ -102,20 +102,20 @@ function check(f1, f2) {
 
 
 
-document.getElementById("f_bch").onclick = function()  {
-  const isFormValid = check(checkName, checkMail)
+// document.getElementById("f_bch").onclick = function()  {
+//   const isFormValid = check(checkName, checkMail)
   
-  if (!isFormValid) {
-    const button = document.getElementById("f_bch");
-    button.disabled = true;
-    setTimeout(() => button.disabled = false, 1000);
-    alert("Форма некорректно заполнена")
-    return false;
-  }
-  else {
-    alert("Форма отправлена")  
-  }
-  return true
-}
+//   if (!isFormValid) {
+//     const button = document.getElementById("f_bch");
+//     button.disabled = true;
+//     setTimeout(() => button.disabled = false, 1000);
+//     alert("Форма некорректно заполнена")
+//     return false;
+//   }
+//   else {
+//     alert("Форма отправлена")  
+//   }
+//   return true
+// }
 
 
