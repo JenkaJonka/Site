@@ -6,6 +6,7 @@ import Contacts from '../pages/Contacts';
 import styles from './Nav.module.css'; // Импортируем CSS модули 
 import Home from '../pages/Home'
 import logo from '../img/vecteezy_mountain_1206236.png'
+import menu from '../img/menu_icon.png'
 
 
 
@@ -15,6 +16,8 @@ const Navigation = () => {
       <header>
         {/* Навигационное меню */}
         <nav className={`navbar ${styles.navbar}`}>
+          <input type="checkbox" name='toggle' id='menu' className='toggleMenu' />
+          <label for="menu"><img src={menu} alt="menu" /></label>
           <Link to="/" className={styles.navLink}><img className={styles.nav_logo} src={logo} alt='home' ></img><figcaption className={styles.title_mini}>Туроператор по Уралу</figcaption></Link>
           <Link to="/" className={styles.navLink}><h1 className={styles.title}>ПУТНИК</h1></Link>
           <ul>

@@ -1,33 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import main_photo from '../img/banner.jpg';
 import './Home.css';
 import 'animate.css';
+import emailjs from 'emailjs-com';
 
 
-function App() {
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
 
 
-    formData.append("access_key", "ecd9bf96-7ddd-4621-87dd-c2bf1c695827");
+function App1() {
+ 
 
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+    const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+    });
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: json
-    }).then((res) => res.json());
+    const [errors, setErrors] = useState({});
+  
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    };
 
-    if (res.success) {
-      console.log("Success", res);
+    const validate = () => {
+      const newErrors = {};
+  
+      if (!formData.name) {
+        newErrors.name = 'Введите имя';
+      } else if (checkName() === false) {
+        newErrors.name = 'Имя введено некорректно';
+      }
+  
+      if (!formData.email) {
+        newErrors.email = 'Введите почту';
+      } else if (checkMail() === false) {
+        newErrors.email = 'Адрес введен некорректно';
+      }
+  
+      return newErrors;
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const newErrors = validate();
+      if (Object.keys(newErrors).length === 0) {
+        emailjs.sendForm('service_xa32rtk', 'template_828olir', e.target, '4k4jWQQBGjtDqn9dW')
+        .then((result) => {
+          console.log(result.text);
+          alert('Сообщение успешно отправлено!');
+        }, (error) => {
+          console.log(error.text);
+          alert('Не удалось отправить сообщение. Попробуйте позднее.');
+        });
+  
+      setFormData({
+        name: '',
+        email: '',
+      });
+      setErrors({});
+    } else {
+      setErrors(newErrors);
     }
-  };
+    };
 
 
 
@@ -47,11 +84,13 @@ function App() {
           Путешествуя по Уралу, вы откроете для себя неизведанные уголки России, которые навсегда останутся в вашем
           сердце!</p>
       </div >
-      <form className='form_submit' onSubmit={onSubmit}>
+      <form className='form_submit' onSubmit={handleSubmit}>
         <h3 className='animate__animated animate__pulse title_form'>Получать эксклюзивные предложения первыми!</h3>
         <div className='form_field'>
-          <input className='field' type="text" id="name" onBlur={checkName} placeholder="Имя" required />
-          <input className='field' type="email" id="email" onBlur={checkMail} placeholder="email" required />
+          <input className='field' type="text" id="name" placeholder="Имя" name="name" value={formData.name} onChange={handleChange} onBlur={checkName} required />
+          {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+          <input className='field' type="email" id="email"  placeholder="email" name="email" value={formData.email} onChange={handleChange} onBlur={checkMail} required />
+          {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
           <button className='bch' type="submit" id='f_bch'>Отправить</button>
         </div>
       </form>
@@ -59,7 +98,7 @@ function App() {
   );
 }
 
-export default App;
+export default App1;
 
 function checkName() {
   let name = document.getElementById("name").value;
@@ -91,31 +130,5 @@ function checkMail() {
 }
 
 
-function check(f1, f2) {
-  if (f1() && f2() === true) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
-
-
-
-document.getElementById("f_bch").onclick = function()  {
-  const isFormValid = check(checkName, checkMail)
-  
-  if (!isFormValid) {
-    const button = document.getElementById("f_bch");
-    button.disabled = true;
-    setTimeout(() => button.disabled = false, 1000);
-    alert("Форма некорректно заполнена")
-    return false;
-  }
-  else {
-    alert("Форма отправлена")  
-  }
-  return true
-}
 
 
