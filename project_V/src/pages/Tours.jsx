@@ -228,4 +228,3 @@ function checkTour() {
         return false;
     }
 }
-
