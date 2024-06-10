@@ -86,4 +86,69 @@ const Tours = () => {
     )
 }
 
+
+export default Tours;
+
+
+function checkName() {
+    let name = document.getElementById("name").value;
+    let regex = /^[A-Za-zА-яЁё\s]{2,15}$/;
+
+    if (regex.test(name)) {
+        document.getElementById("name").style.boxShadow = "0 0 10px #00FF00";
+        return true;
+    }
+
+    else {
+        document.getElementById("name").style.boxShadow = "0 0 10px #FF0000";
+        return false;
+    }
+}
+
+function checkMail() {
+    let mail = document.getElementById("email").value;
+    let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/;
+
+    if (regex.test(mail)) {
+        document.getElementById("email").style.boxShadow = "0 0 10px #00FF00";
+        return true;
+    }
+    else {
+        document.getElementById("email").style.boxShadow = "0 0 10px #FF0000";
+        return false;
+    }
+}
+
+function checkTel() {
+    let tel = document.getElementById("tel").value;
+    let regex = /^\+7?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+
+    if (regex.test(tel)) {
+        document.getElementById("tel").style.boxShadow = "0 0 10px #00FF00";
+        return true;
+    }
+
+    else {
+        document.getElementById("tel").style.boxShadow = "0 0 10px #FF0000";
+        return false;
+    }
+}
+
+function checkTour() {
+    let tour = document.getElementById("tour").value;
+    let regex = /^[A-Za-zА-яЁё\s]{2,50}$/;
+
+    if (regex.test(tour)) {
+        document.getElementById("tour").style.boxShadow = "0 0 10px #00FF00";
+        return true;
+    }
+
+    else {
+        document.getElementById("tour").style.boxShadow = "0 0 10px #FF0000";
+        return false;
+    }
+}
+
+
+
 export default Tours; 
