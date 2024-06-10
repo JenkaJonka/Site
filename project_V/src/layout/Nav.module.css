@@ -28,7 +28,7 @@
     font-weight: bold;
     font-size: 32px;
     color: rgb(8, 124, 139);
-    margin-left: 600px;
+    margin-left: 150%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 8px;
 }
@@ -45,7 +45,7 @@ li {
     position: relative;
     float: left;
     width: 100px;
-    margin-left: 50px;
+    margin-left: 5%;
     font-weight: 900;
     font-size: 20px;
 }
@@ -101,8 +101,20 @@ label {
 }
 
 
+@media screen and (max-width:1400px){
+    .title{
+        display: none;
+    }
 
-@media screen and (max-width:1900px) {
+    ul {
+        justify-content: center;
+    }
+}
+
+
+
+
+@media screen and (max-width:992px) {
     .navbar {
         overflow: hidden;
         display: flex;

@@ -23,7 +23,7 @@ const Navigation = () => {
           <ul>
             <li><Link to="/Tours" className={styles.navLink}>Туры</Link></li>
             <li><Link to="/About" className={styles.navLink}>О нас</Link></li>
-            <li><Link to="/contacts" className={styles.navLink}>Контакты</Link></li>
+            <li><Link to="/contacts" className={styles.navLink}>Вопросы</Link></li>
             <li><p>Телефон <br /><a href="tel:+79222222222">+7-922-222-22-22</a></p></li>
           </ul>
         </nav>
