@@ -8,46 +8,46 @@ import emailjs from 'emailjs-com';
 
 
 function App1() {
- 
 
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
     });
+  };
 
-    const [errors, setErrors] = useState({});
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-    };
+  const validate = () => {
+    const newErrors = {};
 
-    const validate = () => {
-      const newErrors = {};
-  
-      if (!formData.name) {
-        newErrors.name = 'Введите имя';
-      } else if (checkName() === false) {
-        newErrors.name = 'Имя введено некорректно';
-      }
-  
-      if (!formData.email) {
-        newErrors.email = 'Введите почту';
-      } else if (checkMail() === false) {
-        newErrors.email = 'Адрес введен некорректно';
-      }
-  
-      return newErrors;
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const newErrors = validate();
-      if (Object.keys(newErrors).length === 0) {
-        emailjs.sendForm('service_xa32rtk', 'template_828olir', e.target, '4k4jWQQBGjtDqn9dW')
+    if (!formData.name) {
+      newErrors.name = 'Введите имя';
+    } else if (checkName() === false) {
+      newErrors.name = 'Имя введено некорректно';
+    }
+
+    if (!formData.email) {
+      newErrors.email = 'Введите почту';
+    } else if (checkMail() === false) {
+      newErrors.email = 'Адрес введен некорректно';
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = validate();
+    if (Object.keys(newErrors).length === 0) {
+      emailjs.sendForm('service_xa32rtk', 'template_828olir', e.target, '4k4jWQQBGjtDqn9dW')
         .then((result) => {
           console.log(result.text);
           alert('Сообщение успешно отправлено!');
@@ -55,7 +55,7 @@ function App1() {
           console.log(error.text);
           alert('Не удалось отправить сообщение. Попробуйте позднее.');
         });
-  
+
       setFormData({
         name: '',
         email: '',
@@ -64,11 +64,7 @@ function App1() {
     } else {
       setErrors(newErrors);
     }
-    };
-
-
-
-
+  };
 
   return (
     <>
@@ -89,7 +85,7 @@ function App1() {
         <div className='form_field'>
           <input className='field' type="text" id="name" placeholder="Имя" name="name" value={formData.name} onChange={handleChange} onBlur={checkName} required />
           {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
-          <input className='field' type="email" id="email"  placeholder="email" name="email" value={formData.email} onChange={handleChange} onBlur={checkMail} required />
+          <input className='field' type="email" id="email" placeholder="email" name="email" value={formData.email} onChange={handleChange} onBlur={checkMail} required />
           {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
           <button className='bch' type="submit" id='f_bch'>Отправить</button>
         </div>

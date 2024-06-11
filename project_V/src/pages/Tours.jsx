@@ -11,7 +11,6 @@ import 'animate.css'
 import emailjs from 'emailjs-com';
 
 const Tours = () => {
-
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -20,7 +19,6 @@ const Tours = () => {
     });
 
     const [errors, setErrors] = useState({});
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -151,13 +149,17 @@ const Tours = () => {
                 <h3 class="main_title2">
                     Форма для заказа тура и уточнения деталей</h3>
                 <div class="form_field">
-                    <input class="field" type="text" id='name' name="name" placeholder="Имя" value={formData.name} onChange={handleChange} onBlur={checkName} required />
+                    <input class="field" type="text" id='name' name="name" placeholder="Имя"
+                        value={formData.name} onChange={handleChange} onBlur={checkName} required />
                     {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
-                    <input class="field" type="email" id='email' name="email" placeholder="Введите свой E-mail" value={formData.email} onChange={handleChange} onBlur={checkMail} required />
+                    <input class="field" type="email" id='email' name="email" placeholder="Введите свой E-mail"
+                        value={formData.email} onChange={handleChange} onBlur={checkMail} required />
                     {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
-                    <input class="field" type="text" id='tel' name="tel" placeholder="Телефон с +7" value={formData.tel} onChange={handleChange} onBlur={checkTel} required />
+                    <input class="field" type="text" id='tel' name="tel" placeholder="Телефон с +7"
+                        value={formData.tel} onChange={handleChange} onBlur={checkTel} required />
                     {errors.tel && <p style={{ color: 'red' }}>{errors.tel}</p>}
-                    <input class="field" type="text" id='tour' name="tour" placeholder="Какой тур Вас интересует?" value={formData.tour} onChange={handleChange} onBlur={checkTour} required />
+                    <input class="field" type="text" id='tour' name="tour" placeholder="Какой тур Вас интересует?"
+                        value={formData.tour} onChange={handleChange} onBlur={checkTour} required />
                     {errors.tour && <p style={{ color: 'red' }}>{errors.tour}</p>}
                 </div>
                 <button type="submit" class="bch">Отправить!</button>

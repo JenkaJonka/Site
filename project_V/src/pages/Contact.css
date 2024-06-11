@@ -31,44 +31,45 @@
     margin: 0px 0px 50px 20px;
 }
 
-@media screen and (max-width: 1750px)
-{
+@media screen and (max-width: 1750px) {
     .content {
         font-size: 23px;
     }
 }
 
-@media screen and (max-width: 1200px)
-{
+@media screen and (max-width: 1200px) {
     .content {
         font-size: 25px;
     }
+
     .quest_title {
         font-size: 32px;
     }
 }
 
-@media screen and (max-width: 992px)
-{
+@media screen and (max-width: 992px) {
     .contact_title {
         font-size: 24px;
     }
+
     .content {
         font-size: 27px;
     }
+
     .quest_title {
         font-size: 34px;
     }
 }
 
-@media screen and (max-width: 768px)
-{
+@media screen and (max-width: 768px) {
     .contact_title {
         font-size: 25px;
     }
+
     .content {
         font-size: 29px;
     }
+
     .quest_title {
         font-size: 36px;
     }

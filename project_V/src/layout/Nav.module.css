@@ -29,7 +29,7 @@
     font-size: 32px;
     color: rgb(8, 124, 139);
     margin-left: 150%;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 8px;
 }
 
@@ -92,17 +92,26 @@ nav .nav_logo:hover {
     padding: 50px;
 }
 
-.navbar [type="checkbox"] {
-    display: none;
+.navbar input[type=checkbox] {
+
+    padding: 15px 40px;
+    cursor: pointer;
+    position: fixed;
+    text-align: end;
+    right: 25px;
+    top: 20px;
+    z-index: 2;
+    width: 300px;
+    height: 30px;
+    visibility: hidden;
 }
 
 label {
     display: none;
 }
 
-
-@media screen and (max-width:1400px){
-    .title{
+@media screen and (max-width:1400px) {
+    .title {
         display: none;
     }
 
@@ -111,15 +120,12 @@ label {
     }
 }
 
-
-
-
 @media screen and (max-width:992px) {
     .navbar {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        
+
     }
 
     .nav_logo {
@@ -128,26 +134,31 @@ label {
 
     .navbar label {
         display: block;
-        padding: 15px 40px;
+        padding: 15px 35px;
         cursor: pointer;
         position: absolute;
         text-align: end;
         right: 20px;
+        width: 300px;
     }
 
     .title_mini {
         display: none;
     }
-    
 
-    .navbar ul {
+    .menu {
         flex-direction: column;
         text-align: left;
         width: 100px;
         padding-left: 0px;
         justify-content: left;
         display: none;
-        
+        transform-origin: top;
+        transition: 1s;
+    }
+
+    .toggleMenu:checked~.menu {
+        display: block;
     }
 
     .navbar li {
@@ -165,9 +176,7 @@ label {
         display: none;
     }
 
-    .navbar input:checked + .navbar label + .navbar ul{
-        display: block;
-    }
 
-    
+
+
 }
